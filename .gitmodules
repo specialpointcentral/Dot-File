@@ -4,3 +4,6 @@
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule ".SpaceVim.d"]
+	path = .SpaceVim.d
+	url = https://github.com/martins3/My-Linux-config
