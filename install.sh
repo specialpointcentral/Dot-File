@@ -56,3 +56,12 @@ cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release \
     -DLLVM_BUILD_INCLUDE_DIR=/usr/include/llvm-10/
 sudo cmake --build Release --target install
 cd ..
+
+# tmux config
+echo "Config tmux"
+cp $PWD/config/.tmux.conf ~/
+
+# zsh config
+echo "Config zsh"
+cp $PWD/config/.zshrc ~/
+
