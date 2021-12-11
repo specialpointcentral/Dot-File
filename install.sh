@@ -37,6 +37,7 @@ cp -r $PWD/NvChad/ ~/.config/nvim
 # zsh
 echo "Install ohmyzsh"
 sudo apt install zsh curl -y
+rm -rf ~/.oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ""--keep-zshrc
 # Add oh-my-zsh plugins
 echo "Install ohmyzsh plugins"
