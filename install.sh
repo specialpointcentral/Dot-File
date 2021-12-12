@@ -6,7 +6,7 @@ git submodule init
 git submodule update
 
 sudo apt update
-sudo apt install git gcc python3 wget build-essential automake -y
+sudo apt install git gcc python3 wget build-essential automake curl clang cmake ninja-build -y
 
 # tmux
 echo "Install tmux"
@@ -19,8 +19,12 @@ cd ..
 
 # nvim
 echo "Install nvim"
-# this is used in ubuntu, version >= 18.04
-sudo apt install python3-neovim neovim -y
+sudo apt install libtool libtool-bin gettext -y
+cd neovim
+git checkout stable
+make CMAKE_BUILD_TYPE=Release
+sudo make install
+cd ..
 
 # font
 echo "Install Nerd Fonts: Fira code"
@@ -36,7 +40,7 @@ cp -r $PWD/NvChad/ ~/.config/nvim
 
 # zsh
 echo "Install ohmyzsh"
-sudo apt install zsh curl -y
+sudo apt install zsh -y
 rm -rf ~/.oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ""--keep-zshrc
 # Add oh-my-zsh plugins
@@ -49,7 +53,7 @@ cp -r $PWD/powerlevel10k ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/
 
 # ccls
 echo "Install ccls"
-sudo apt install libclang-10-dev clang cmake zlib1g-dev rapidjson-dev -y
+sudo apt install libclang-10-dev zlib1g-dev rapidjson-dev -y
 cd ccls
 cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_PREFIX_PATH=/usr/lib/llvm-10 \

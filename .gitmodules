@@ -16,3 +16,6 @@
 [submodule "ccls"]
 	path = ccls
 	url = https://github.com/MaskRay/ccls
+[submodule "neovim"]
+	path = neovim
+	url = https://github.com/neovim/neovim
