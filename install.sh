@@ -2,6 +2,9 @@
 
 PWD=$(pwd)
 
+# delete files
+rm -rf neovim NvChad powerlevel10k tmux zsh-autosuggestions zsh-syntax-highlighting ccls
+
 git submodule init
 git submodule update
 
